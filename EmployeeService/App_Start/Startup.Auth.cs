@@ -59,11 +59,18 @@ namespace EmployeeService
             //    appId: "",
             //    appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "1041843107015-qndjho67tj50iq4t82pjcgorfhvt75h7.apps.googleusercontent.com",
+                ClientSecret = "AIpYnlPSUVr9ztw-AmoRrVQV"
+            });
         }
     }
 }
+//clienti
+//1041843107015-qndjho67tj50iq4t82pjcgorfhvt75h7.apps.googleusercontent.com
+//clients
+//AIpYnlPSUVr9ztw-AmoRrVQV
+//http://localhost:16691
+//http://localhost:16691/api/Account/ExternalLogins?returnUrl=%2F&generateState=true
+///api/Account/ExternalLogin?provider=Google&response_type=token&client_id=self&redirect_uri=http%3A%2F%2Flocalhost%3A16691%2F&state=JsmVudujP7MoARl00hJn1G3WGk5aidgCfUEkLPDREEc1
