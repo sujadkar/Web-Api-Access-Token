@@ -47,6 +47,9 @@
                     <tr>
                        <td><input type="button" class="btn btn-success" id="btnGoogleLogin" value="Login with Google"/></td>
                     </tr>
+                    <tr>
+                        <td><input type="button" class="btn btn-success" id="btnFacebookLogin" value="Login with Facebook" /></td>
+                    </tr>
                 </tbody>
             </table>
 			<div id="divError" class="alert alert-danger collapse">
@@ -71,6 +74,11 @@
             $('#btnGoogleLogin').click(function () {
                 window.location.href = "/api/Account/ExternalLogin?provider=Google&response_type=token&client_id=self&redirect_uri=http%3A%2F%2Flocalhost%3A16691%2FLogin.html&state=JsmVudujP7MoARl00hJn1G3WGk5aidgCfUEkLPDREEc1";
             });
+
+            $('#btnFacebookLogin').click(function () {
+                window.location.href = "/api/Account/ExternalLogin?provider=Facebook&response_type=token&client_id=self&redirect_uri=http%3A%2F%2Flocalhost%3A16691%2FLogin.html&state=JsmVudujP7MoARl00hJn1G3WGk5aidgCfUEkLPDREEc1";
+            });
+
             //save the new user details
             $('#btnLogin').click(function () {
                 $.ajax({

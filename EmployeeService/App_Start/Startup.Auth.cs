@@ -10,6 +10,7 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using EmployeeService.Providers;
 using EmployeeService.Models;
+using Microsoft.Owin.Security.Facebook;
 
 namespace EmployeeService
 {
@@ -56,9 +57,19 @@ namespace EmployeeService
             //    consumerSecret: "");
 
             //app.UseFacebookAuthentication(
-            //    appId: "",
-            //    appSecret: "");
+            //    appId: "490352431303566",
+            //    appSecret: "ee6951c0ad8b09ee30babdd5c529ee65");
 
+            var fbOptions = new FacebookAuthenticationOptions()
+            {
+                AppId = "490352431303566",
+                AppSecret = "ee6951c0ad8b09ee30babdd5c529ee65",
+                BackchannelHttpHandler = new EmployeeService.Facebook.FacebookBackChannelHandler(),
+                UserInformationEndpoint = "https://graph.facebook.com/v2.4/me?fields=id,email"
+            };
+
+            fbOptions.Scope.Add("email");
+            app.UseFacebookAuthentication(fbOptions);
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
                 ClientId = "1041843107015-qndjho67tj50iq4t82pjcgorfhvt75h7.apps.googleusercontent.com",
@@ -67,6 +78,10 @@ namespace EmployeeService
         }
     }
 }
+//fbAppID
+//490352431303566
+//secretid
+//ee6951c0ad8b09ee30babdd5c529ee65
 //clienti
 //1041843107015-qndjho67tj50iq4t82pjcgorfhvt75h7.apps.googleusercontent.com
 //clients
